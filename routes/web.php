@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Inicio;
+use App\Http\Controllers\Admin;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,6 +15,18 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+
+Route::get('/', [Inicio::class, 'inicio']);
+
+
+Route::get('/info', [Admin::class, 'info']);
+    
+
+Route::get('/caninos', [Admin::class, 'caninos']);
+    
+
+Route::get('/felinos', [Admin::class, 'felinos']);
+    
+
+Route::get('/pqr', [Admin::class, 'pqr']);
+   
